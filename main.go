@@ -1,24 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func main() {
 
-	var ages = [3]int{1, 2, 3}
-	fmt.Println(ages, "and the length is", len(ages))
+	test := "Hello world"
+	fmt.Println(strings.Contains(test, "Hello"))
+	fmt.Println(strings.ReplaceAll(test, "Hello", "Greetings"))
+	fmt.Println(len("hello world"))
 
-	names := [4]string{"a"}
-	fmt.Println(names[0], "length", len(names))
+	ages := []int{1, 2, 5, 3, 9, 6}
+	sort.Ints(ages)
+	fmt.Println(ages)
 
-	// slices
+	index := sort.SearchInts(ages, 0)
 
-	test := []string{"abebe", "kebede"}
-	test = append(test, "alemu")
-	fmt.Println(test)
+	fmt.Println(index)
 
-	//rangeOne := names[1:2]
-	//rangeTwo := names[1:]
-	rangeThree := test[:3]
-
-	fmt.Println(rangeThree, "length", len(rangeThree))
 }
